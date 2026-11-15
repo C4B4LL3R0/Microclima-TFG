@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--
+===============================================================================
+ ARCHIVO: templates/index.html
+ PROYECTO: Monitor de Microclima Edge para Conservación Preventiva
+ FUNCIÓN: Interfaz única (SPA) servida por Flask para Raspberry Pi y Kubuntu.
+===============================================================================
+ La página es 100 % offline: no carga fuentes, iconos, CDN ni scripts remotos.
+ Socket.IO se sirve desde /static/js/socket.io.min.js. Toda la interacción se
+ realiza por WebSocket (con fallback a polling de Socket.IO).
+
+ El servidor inyecta:
+   mode       -> "rpi" o "sim" (controla la visibilidad del panel de pruebas).
+   mode_label -> etiqueta legible del entorno.
+   app_version-> versión mostrada en el pie.
+
+ No se usa lógica de negocio en la plantilla: los límites, estados y patrones
+ acústicos llegan por Socket.IO desde el backend, que es la fuente de verdad.
+===============================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#173f35">
+  <title>Microclima Edge · Conservación Preventiva</title>
+  <!-- Hoja de estilos local; no se usan CDN para garantizar la red cerrada. -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-mode="{{ mode }}">
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <!-- ===================================================================
+         CABECERA: identidad, entorno de ejecución y estado de conexión.
+         El indicador de conexión lo actualiza app.js a partir de los eventos
+         connect/disconnect/reconnect de Socket.IO.
+    ==================================================================== -->
+    <header class="hero">
+      <div class="brand">
+        <div class="brand-seal" aria-hidden="true">
+          <span>M</span>
+        </div>
+        <div class="brand-copy">
+          <p class="eyebrow">Conservación preventiva · TFG Mantenimiento Electrónico</p>
+          <h1>Monitor de Microclima <span>Edge</span></h1>
+          <p class="brand-subtitle">
+            Vigilancia ambiental autónoma para archivos, museos y depósitos.
+          </p>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div id="connection-pill" class="connection-pill is-waiting" role="status" aria-live="polite">
+          <span class="connection-dot" aria-hidden="true"></span>
+          <span id="connection-text">Conectando…</span>
+        </div>
+        <div class="mode-badge">
+          <span class="mode-badge-label">Entorno</span>
+          <strong>{{ mode_label }}</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =================================================================
+           BARRA DE CONTROL: perfil normativo compartido y botón de silencio.
+           El desplegable se rellena desde el catálogo del servidor; cuando un
+           cliente lo cambia, el servidor emite profile_changed a todos.
+      ================================================================== -->
+      <section class="control-bar" aria-label="Controles del sistema">
+        <div class="profile-control">
+          <label for="profile-select">Perfil normativo de conservación</label>
+          <div class="select-wrap">
+            <select id="profile-select" aria-describedby="profile-description" disabled>
+              <option value="">Cargando perfiles…</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">▾</span>
+          </div>
+          <p id="profile-description" class="control-hint">
+            Los límites se aplican a las tarjetas y a la alarma acústica.
+          </p>
+        </div>
+
+        <div class="mute-control">
+          <span class="mute-caption">Alarma sonora</span>
+          <button id="mute-button" class="mute-button" type="button" disabled
+                  aria-pressed="false" title="Silenciar o reactivar el buzzer">
+            <span class="mute-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                   stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+                <path class="sound-wave" d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+                <path class="sound-wave" d="M18.5 6a9 9 0 0 1 0 12"></path>
+                <path class="sound-slash" d="m16 9 5 6M21 9l-5 6"></path>
+              </svg>
+            </span>
+            <span id="mute-label">Silenciar alarma</span>
+          </button>
+          <p id="mute-hint" class="control-hint">Sincronizado con todos los dispositivos.</p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BANNER DE ALARMA: estado global, causas y patrón acústico.
+           app.js construye las barras de pitido según beeps_ms/gap_ms que
+           publica el motor de alarmas. La animación es solo una representación;
+           el sonido real lo controla el hilo del buzzer en el servidor.
+      ================================================================== -->
+      <section id="alarm-panel" class="alarm-panel" data-state="normal" aria-live="polite">
+        <div class="alarm-copy">
+          <p class="section-kicker">Estado acústico</p>
+          <h2 id="alarm-title">Esperando la primera lectura…</h2>
+          <p id="alarm-description" class="alarm-description">
+            El servidor está inicializando los sensores y el bus de datos.
+          </p>
+          <ul id="alarm-reasons" class="alarm-reasons" hidden></ul>
+        </div>
+        <div class="pattern-card" aria-label="Patrón de pitidos">
+          <div class="pattern-head">
+            <span class="pattern-caption">Patrón</span>
+            <strong id="pattern-code">· · ·</strong>
+          </div>
+          <div id="pattern-bars" class="pattern-bars" aria-hidden="true"></div>
+          <p id="pattern-label" class="pattern-label">Sin patrón activo</p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TARJETAS DE SENSORES: cuatro magnitudes que generan alarma.
+           Cada tarjeta tiene un data-sensor que app.js usa para localizar
+           valor, rango y etiqueta de estado sin duplicar selectores.
+      ================================================================== -->
+      <section class="sensor-grid" aria-label="Medidas ambientales en tiempo real">
+        <article class="sensor-card" data-sensor="temperature" data-status="unknown">
+          <div class="sensor-head">
+            <span class="sensor-icon icon-temp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                   stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0Z"></path>
+                <path d="M12 8v8"></path>
+              </svg>
+            </span>
+            <h3>Temperatura</h3>
+            <span class="status-badge">Sin datos</span>
+          </div>
+          <div class="sensor-reading">
+            <span class="sensor-value">—</span>
+            <span class="sensor-unit">°C</span>
+          </div>
+          <p class="sensor-range">Rango permitido: <strong>—</strong></p>
+          <div class="sensor-foot">
+            <span class="sensor-variable">TEMP</span>
+            <span class="sensor-note">BME280 · 0x76</span>
+          </div>
+        </article>
+
+        <article class="sensor-card" data-sensor="humidity" data-status="unknown">
+          <div class="sensor-head">
+            <span class="sensor-icon icon-hum" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                   stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"></path>
+                <path d="M9 15a3 3 0 0 0 3 3"></path>
+              </svg>
+            </span>
+            <h3>Humedad relativa</h3>
+            <span class="status-badge">Sin datos</span>
+          </div>
+          <div class="sensor-reading">
+            <span class="sensor-value">—</span>
+            <span class="sensor-unit">%</span>
+          </div>
+          <p class="sensor-range">Rango permitido: <strong>—</strong></p>
+          <div class="sensor-foot">
+            <span class="sensor-variable">HR</span>
+            <span class="sensor-note">BME280 · 0x76</span>
+          </div>
+        </article>
+
+        <article class="sensor-card" data-sensor="eco2" data-status="unknown">
+          <div class="sensor-head">
+            <span class="sensor-icon icon-air" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                   stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M4 8h9a3 3 0 1 0-3-3"></path>
+                <path d="M3 12h14a3 3 0 1 1-3 3"></path>
+                <path d="M5 16h7"></path>
+              </svg>
+            </span>
+            <h3>eCO₂ equivalente</h3>
+            <span class="status-badge">Sin datos</span>
+          </div>
+          <div class="sensor-reading">
+            <span class="sensor-value">—</span>
+            <span class="sensor-unit">ppm</span>
+          </div>
+          <p class="sensor-range">Límite máximo: <strong>—</strong></p>
+          <div class="sensor-foot">
+            <span class="sensor-variable">eCO₂</span>
+            <span class="sensor-note">SGP30 · 0x58</span>
+          </div>
+        </article>
+
+        <article class="sensor-card" data-sensor="tvoc" data-status="unknown">
+          <div class="sensor-head">
+            <span class="sensor-icon icon-tvoc" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                   stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M12 21V9"></path>
+                <path d="M12 9c0-3 2-5 5-5 0 3-2 5-5 5Z"></path>
+                <path d="M12 14c0-3-2-5-5-5 0 3 2 5 5 5Z"></path>
+                <path d="M7 21h10"></path>
+              </svg>
+            </span>
+            <h3>COV totales</h3>
+            <span class="status-badge">Sin datos</span>
+          </div>
+          <div class="sensor-reading">
+            <span class="sensor-value">—</span>
+            <span class="sensor-unit">ppb</span>
+          </div>
+          <p class="sensor-range">Límite máximo: <strong>—</strong></p>
+          <div class="sensor-foot">
+            <span class="sensor-variable">TVOC</span>
+            <span class="sensor-note">SGP30 · 0x58</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- =================================================================
+           PANEL DE INYECCIÓN MANUAL: solo se renderiza en microclima_sim.
+           El interruptor alterna entre generación automática y valores fijados.
+           Cada slider tiene un campo numérico sincronizado y emite sim_control
+           con debounce para no saturar el WebSocket.
+      ================================================================== -->
+      {% if mode == "sim" %}
+      <section id="sim-panel" class="sim-panel" aria-labelledby="sim-title">
+        <div class="sim-header">
+          <div>
+            <p class="section-kicker">Modo pruebas</p>
+            <h2 id="sim-title">Panel de inyección manual de datos</h2>
+            <p class="sim-intro">
+              Fije las magnitudes para comprobar en tiempo real los umbrales, las
+              tarjetas y el patrón del buzzer. No afecta a hardware real.
+            </p>
+          </div>
+          <label class="switch" for="sim-manual-toggle">
+            <span class="switch-copy">
+              <span class="switch-title">Valores manuales</span>
+              <span id="sim-mode-label" class="switch-state">Automático</span>
+            </span>
+            <input id="sim-manual-toggle" type="checkbox" role="switch" aria-checked="false">
+            <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+          </label>
+        </div>
+
+        <div class="sim-grid">
+          <div class="sim-control" data-sim-key="temperature">
+            <div class="sim-control-head">
+              <label for="sim-temperature-range">Temperatura</label>
+              <div class="number-wrap">
+                <input id="sim-temperature-number" class="sim-number" type="number"
+                       min="-10" max="50" step="0.1" value="20.0" inputmode="decimal"
+                       aria-label="Temperatura simulada en grados Celsius">
+                <span>°C</span>
+              </div>
+            </div>
+            <input id="sim-temperature-range" class="sim-range" type="range"
+                   min="-10" max="50" step="0.1" value="20.0">
+            <div class="range-extents"><span>-10 °C</span><span>50 °C</span></div>
+          </div>
+
+          <div class="sim-control" data-sim-key="humidity">
+            <div class="sim-control-head">
+              <label for="sim-humidity-range">Humedad relativa</label>
+              <div class="number-wrap">
+                <input id="sim-humidity-number" class="sim-number" type="number"
+                       min="0" max="100" step="0.1" value="45.0" inputmode="decimal"
+                       aria-label="Humedad relativa simulada en porcentaje">
+                <span>%</span>
+              </div>
+            </div>
+            <input id="sim-humidity-range" class="sim-range" type="range"
+                   min="0" max="100" step="0.1" value="45.0">
+            <div class="range-extents"><span>0 %</span><span>100 %</span></div>
+          </div>
+
+          <div class="sim-control" data-sim-key="eco2">
+            <div class="sim-control-head">
+              <label for="sim-eco2-range">eCO₂ equivalente</label>
+              <div class="number-wrap">
+                <input id="sim-eco2-number" class="sim-number" type="number"
+                       min="400" max="3000" step="1" value="600" inputmode="numeric"
+                       aria-label="eCO2 equivalente simulada en partes por millón">
+                <span>ppm</span>
+              </div>
+            </div>
+            <input id="sim-eco2-range" class="sim-range" type="range"
+                   min="400" max="3000" step="1" value="600">
+            <div class="range-extents"><span>400 ppm</span><span>3000 ppm</span></div>
+          </div>
+
+          <div class="sim-control" data-sim-key="tvoc">
+            <div class="sim-control-head">
+              <label for="sim-tvoc-range">COV totales</label>
+              <div class="number-wrap">
+                <input id="sim-tvoc-number" class="sim-number" type="number"
+                       min="0" max="2000" step="1" value="100" inputmode="numeric"
+                       aria-label="COV totales simulados en partes por billón">
+                <span>ppb</span>
+              </div>
+            </div>
+            <input id="sim-tvoc-range" class="sim-range" type="range"
+                   min="0" max="2000" step="1" value="100">
+            <div class="range-extents"><span>0 ppb</span><span>2000 ppb</span></div>
+          </div>
+        </div>
+
+        <p class="sim-footnote">
+          <strong>Prueba sugerida:</strong> seleccione «Valores manuales» y suba la
+          temperatura por encima del máximo del perfil para escuchar el patrón
+          <span class="mono">— ·</span>. Añada otra variable fuera de rango para
+          obtener los cinco pitidos de alarma múltiple.
+        </p>
+      </section>
+      {% endif %}
+
+      <!-- =================================================================
+           PANEL DE DIAGNÓSTICO: presión, salud de sensores, RTC y buzzer.
+           Los errores I2C se listan sin ocultarlos; en un equipo de archivo es
+           preferible un aviso visible a una medida silenciosamente obsoleta.
+      ================================================================== -->
+      <section class="system-panel" aria-labelledby="system-title">
+        <div class="system-head">
+          <div>
+            <p class="section-kicker">Telemetría del sistema</p>
+            <h2 id="system-title">Salud del monitor</h2>
+          </div>
+          <span id="health-chip" class="health-chip" data-state="waiting">Esperando datos</span>
+        </div>
+
+        <div class="telemetry-grid">
+          <div class="telemetry-item">
+            <span class="telemetry-label">Presión barométrica</span>
+            <strong id="pressure-value" class="telemetry-value">— hPa</strong>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-label">Última lectura</span>
+            <strong id="last-reading" class="telemetry-value">—</strong>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-label">Fuente de datos</span>
+            <strong id="sensor-source" class="telemetry-value">—</strong>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-label">Salida acústica</span>
+            <strong id="buzzer-status" class="telemetry-value">—</strong>
+          </div>
+        </div>
+
+        <div class="health-row">
+          <div class="health-summary-wrap">
+            <h3>Diagnóstico de sensores</h3>
+            <p id="health-summary">Aún no se ha recibido ninguna lectura.</p>
+            <ul id="sensor-errors" class="sensor-errors" hidden></ul>
+          </div>
+          <div class="hardware-info">
+            <h3>Hardware y reloj</h3>
+            <p id="hardware-platform">Plataforma no disponible.</p>
+            <p id="hardware-rtc">RTC: sin información.</p>
+            <p id="hardware-buzzer">Buzzer: sin información.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         PIE: versión, recordatorio de red cerrada y hora del servidor.
+    ==================================================================== -->
+    <footer class="footer">
+      <p>
+        <strong>Microclima Edge v{{ app_version }}</strong> · Monitor autónomo de
+        conservación preventiva · Funcionamiento 100 % offline.
+      </p>
+      <p id="server-clock" class="server-clock">Hora del servidor: —</p>
+    </footer>
+  </div>
+
+  <noscript>
+    <div class="noscript-warning">
+      Esta interfaz necesita JavaScript para recibir las medidas por WebSocket.
+    </div>
+  </noscript>
+
+  <!-- Aviso flotante para errores de validación o pérdida de conexión. -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" hidden></div>
+
+  <!-- Socket.IO 4.8.1 servido localmente: imprescindible en la red sin Internet. -->
+  <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
