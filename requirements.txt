@@ -1,0 +1,30 @@
+# =============================================================================
+# ARCHIVO: requirements.txt
+# PROYECTO: Monitor de Microclima Edge para Conservación Preventiva
+# FUNCIÓN: Dependencias Python comunes a Kubuntu y Raspberry Pi 3B.
+# =============================================================================
+# Instalación recomendada en un entorno virtual:
+#   python3 -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Flask + Flask-SocketIO + simple-websocket forman el servidor web/WebSocket.
+# Se usa async_mode="threading" para evitar eventlet/gevent y facilitar el
+# empaquetado con PyInstaller en ARM.
+Flask>=3.0,<4
+Flask-SocketIO>=5.3,<6
+simple-websocket>=1.0,<2
+
+# smbus2 se usa en la Raspberry Pi para acceder a /dev/i2c-1. En Kubuntu se
+# instala igualmente (no se abre el bus en modo simulación).
+smbus2>=0.4,<1
+
+# gpiozero controla el buzzer activo en GPIO17. Solo se instala en arquitecturas
+# ARM para no arrastrar dependencias de GPIO en el PC de desarrollo. En Raspberry
+# Pi OS puede instalarse también con: sudo apt install python3-gpiozero python3-lgpio
+gpiozero>=2.0,<3; platform_machine == "armv7l" or platform_machine == "aarch64" or platform_machine == "arm64"
+lgpio>=0.2.2; platform_machine == "armv7l" or platform_machine == "aarch64" or platform_machine == "arm64"
+
+# Herramienta de empaquetado. Se incluye para que build_executables.sh funcione
+# tras instalar requirements.txt sin pasos adicionales.
+PyInstaller>=6.0,<7

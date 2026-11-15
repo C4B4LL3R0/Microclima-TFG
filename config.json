@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "selected_profile": "ISO_11799",
+  "profiles": {
+    "ISO_11799": {
+      "id": "ISO_11799",
+      "name": "ISO 11799 - Archivos y Bibliotecas",
+      "description": "Perfil de conservación preventiva para fondos documentales, bibliográficos y archivos permanentes.",
+      "limits": {
+        "temperature": {
+          "min": 14.0,
+          "max": 18.0,
+          "unit": "°C"
+        },
+        "humidity": {
+          "min": 35.0,
+          "max": 50.0,
+          "unit": "%"
+        },
+        "eco2": {
+          "min": null,
+          "max": 800.0,
+          "unit": "ppm"
+        },
+        "tvoc": {
+          "min": null,
+          "max": 200.0,
+          "unit": "ppb"
+        }
+      }
+    },
+    "EN_15757": {
+      "id": "EN_15757",
+      "name": "EN 15757 - Orgánicos e Higroscópicos",
+      "description": "Perfil para materiales orgánicos sensibles a variaciones de humedad: papel, pergamino, cuero, textiles y madera.",
+      "limits": {
+        "temperature": {
+          "min": 18.0,
+          "max": 22.0,
+          "unit": "°C"
+        },
+        "humidity": {
+          "min": 45.0,
+          "max": 55.0,
+          "unit": "%"
+        },
+        "eco2": {
+          "min": null,
+          "max": 1000.0,
+          "unit": "ppm"
+        },
+        "tvoc": {
+          "min": null,
+          "max": 300.0,
+          "unit": "ppb"
+        }
+      }
+    },
+    "METALES": {
+      "id": "METALES",
+      "name": "Conservación de Metales Arqueológicos",
+      "description": "Perfil de baja humedad para limitar la corrosión de metales arqueológicos y piezas con sales higroscópicas.",
+      "limits": {
+        "temperature": {
+          "min": 15.0,
+          "max": 24.0,
+          "unit": "°C"
+        },
+        "humidity": {
+          "min": 0.0,
+          "max": 35.0,
+          "unit": "%"
+        },
+        "eco2": {
+          "min": null,
+          "max": 1200.0,
+          "unit": "ppm"
+        },
+        "tvoc": {
+          "min": null,
+          "max": 500.0,
+          "unit": "ppb"
+        }
+      }
+    }
+  }
+}

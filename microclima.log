@@ -1,0 +1,489 @@
+2026-11-15 09:02:36 | INFO     | microclima.logging_setup | Registro de actividad: /home/zunvao/microclima.log
+2026-11-15 09:02:36 | INFO     | microclima.config | Configuración cargada desde /home/zunvao/config.json (perfil=ISO_11799).
+2026-11-15 09:02:36 | INFO     | microclima.hardware.buzzer | Controlador de buzzer iniciado (Emulación visual por consola).
+2026-11-15 09:02:36 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:36 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:36 | INFO     | microclima.core.monitor | Monitor de sensores iniciado (intervalo 1.00 s, origen=SimulatedSensorArray).
+2026-11-15 09:02:36 | INFO     | microclima.core.runtime | Runtime sim iniciado. Perfil=ISO_11799; intervalo=1.00s.
+2026-11-15 09:02:36 | INFO     | microclima.web.app | Interfaz disponible en http://127.0.0.1:5000 (modo=sim).
+2026-11-15 09:02:36 | WARNING  | werkzeug | Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+2026-11-15 09:02:37 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:38 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:39 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:40 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:41 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:02:41 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:42 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:02:42 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:43 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:44 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:02:44 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:02:45 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:46 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:47 | ERROR    | microclima.core.runtime | Error publicando el estado por Socket.IO.
+Traceback (most recent call last):
+  File "/home/zunvao/src/microclima/core/runtime.py", line 235, in publish_state
+    callback(self.build_state())
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/src/microclima/web/app.py", line 273, in _broadcast_state
+    self.socketio.emit("state_update", state, broadcast=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zunvao/.venv/lib/python3.14/site-packages/flask_socketio/__init__.py", line 489, in emit
+    self.server.emit(event, *args, namespace=namespace, to=to,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     skip_sid=skip_sid, callback=callback, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Server.emit() got an unexpected keyword argument 'broadcast'
+2026-11-15 09:02:48 | INFO     | microclima.core.runtime | Deteniendo runtime de microclima...
+2026-11-15 09:02:49 | INFO     | microclima.logging_setup | Registro de actividad: /home/zunvao/microclima.log
+2026-11-15 09:02:49 | INFO     | microclima.config | Configuración cargada desde /home/zunvao/config.json (perfil=ISO_11799).
+2026-11-15 09:02:49 | INFO     | microclima.hardware.buzzer | Controlador de buzzer iniciado (Emulación visual por consola).
+2026-11-15 09:02:49 | INFO     | microclima.core.monitor | Monitor de sensores iniciado (intervalo 1.00 s, origen=SimulatedSensorArray).
+2026-11-15 09:02:49 | INFO     | microclima.core.runtime | Runtime sim iniciado. Perfil=ISO_11799; intervalo=1.00s.
+2026-11-15 09:02:49 | INFO     | microclima.web.app | Interfaz disponible en http://127.0.0.1:5000 (modo=sim).
+2026-11-15 09:02:49 | WARNING  | werkzeug | Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+2026-11-15 09:02:56 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:02:57 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:02:59 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:04 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:06 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:08 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:09 | INFO     | microclima.web.app | Cliente web conectado (yhePDrFzPlnphEcUAAAB). Total=1.
+2026-11-15 09:03:10 | INFO     | microclima.config | Perfil activo cambiado y persistido: EN_15757
+2026-11-15 09:03:10 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:03:10 | INFO     | microclima.core.runtime | Perfil aplicado en runtime: EN_15757
+2026-11-15 09:03:11 | INFO     | microclima.hardware.buzzer | Alarma sonora SILENCIADA.
+2026-11-15 09:03:11 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:11 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:03:12 | INFO     | microclima.hardware.buzzer | Alarma sonora REACTIVADA.
+2026-11-15 09:03:12 | INFO     | microclima.config | Perfil activo cambiado y persistido: ISO_11799
+2026-11-15 09:03:12 | INFO     | microclima.core.runtime | Perfil aplicado en runtime: ISO_11799
+2026-11-15 09:03:12 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:12 | INFO     | microclima.web.app | Cliente web desconectado (yhePDrFzPlnphEcUAAAB). Total=0.
+2026-11-15 09:03:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:03:19 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:03:20 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:21 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:03:24 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:29 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:03:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:32 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:39 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:03:41 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:03:42 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:03:44 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:03:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:03:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:00 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:01 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:04:02 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:03 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:10 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:12 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:21 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:23 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:24 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:04:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:28 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:32 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:34 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:43 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:44 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:04:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:49 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:04:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:52 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:04:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:04:54 | INFO     | microclima.web.app | Cliente web conectado (EJ-QDCNKHH3rkNLoAAAD). Total=1.
+2026-11-15 09:04:55 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:03 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:05:05 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:10 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:12 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:13 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:05:14 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:15 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:24 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:05:26 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:27 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:28 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:29 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:34 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:05:35 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:37 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:05:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:05:49 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:52 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:05:55 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:05:58 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:05 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:06:06 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:08 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:13 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:06:17 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:06:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:19 | INFO     | microclima.web.app | Cliente web desconectado (EJ-QDCNKHH3rkNLoAAAD). Total=0.
+2026-11-15 09:06:27 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:29 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:06:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:31 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:34 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:06:36 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:37 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:06:40 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:47 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:06:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:06:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:06:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:06:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:06:58 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:06:59 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:07:00 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:10 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:07:11 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:13 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:17 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:07:19 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:20 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:07:22 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:29 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:07:31 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:32 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:34 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:35 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:37 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:07:40 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:07:43 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:07:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:07:55 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:07:59 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:00 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:01 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:04 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:11 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:08:14 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:08:15 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:20 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:21 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:22 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:23 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:32 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:08:35 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:08:36 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:39 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:43 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:08:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:08:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:08:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:08:55 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:08:56 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:08:57 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:00 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:01 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:02 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:04 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:06 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:14 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:09:15 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:09:17 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:09:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:21 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:24 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:26 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:27 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:28 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:35 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:09:37 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:09:38 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:39 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:09:40 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:42 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:43 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:09:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:09:56 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:09:57 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:09:59 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:01 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:03 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:05 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:17 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:10:19 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:20 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:22 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:27 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:28 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:31 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:38 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:10:39 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:40 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:10:41 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:10:42 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:47 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:10:49 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:10:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:10:52 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:00 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:11:02 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:11:03 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:10 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:13 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:20 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:11:21 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:11:23 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:11:24 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:27 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:11:31 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:41 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:11:42 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:11:44 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:11:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:11:47 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:11:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:01 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:03 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:04 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:05 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:06 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:09 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:12 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:15 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:22 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:12:25 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:26 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:29 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:31 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:35 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:43 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:44 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:45 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:12:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:12:48 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:50 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:52 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:12:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:12:55 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:04 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:05 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:06 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:07 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:13:08 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:11 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:13:12 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:15 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:13:18 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:26 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:13:28 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:30 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:33 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:13:36 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por encima del máximo [— ·] · 1 pitido largo (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:13:38 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:46 | INFO     | microclima.hardware.buzzer | Alarma acústica: Temperatura por debajo del mínimo [— · ·] · 1 pitido largo (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:47 | INFO     | microclima.hardware.buzzer | Alarma acústica: Múltiples variables fuera de rango [· · · · ·] · 5 pitidos intermitentes rápidos (0,1 s).
+2026-11-15 09:13:49 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por debajo del mínimo [— — · ·] · 2 pitidos largos (0,6 s) + 2 pitidos cortos (0,2 s).
+2026-11-15 09:13:51 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:53 | INFO     | microclima.hardware.buzzer | Alarma acústica: Humedad relativa por encima del máximo [— — ·] · 2 pitidos largos (0,6 s) + 1 pitido corto (0,2 s).
+2026-11-15 09:13:54 | INFO     | microclima.hardware.buzzer | Alarma acústica: sin pitidos (estado normal).
+2026-11-15 09:13:58 | INFO     | microclima.core.runtime | Deteniendo runtime de microclima...
